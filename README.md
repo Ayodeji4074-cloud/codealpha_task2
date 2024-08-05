@@ -120,9 +120,9 @@ POST /register
 Content-Type: application/json
 
 {
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "securepassword"
+  "username": "john_doe003",
+  "email": "john003@example.com",
+  "password": "securepassword003"
 }
 ```
 
@@ -145,6 +145,9 @@ GET /menus
 Authorization: Bearer <your_jwt_token>
 ```
 
-## Deployment
-
-For deploying the application, you can check 
+Flask
+Flask-JWT-Extended
+Flask-Migrate
+Flask-SQLAlchemy
+Werkzeug
+ 
