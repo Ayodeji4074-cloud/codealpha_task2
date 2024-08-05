@@ -166,7 +166,7 @@ def test_get_users_access_granted(client, access_token_staff):
     assert response.status_code == 200
     assert isinstance(response.json, list)
 
-# testing the get user endpoint
+# testing the get user endpoint by id returning only username 
 def test_get_user(client, access_token_staff):
     response = client.get('/users/1', headers={'Authorization': f'Bearer {access_token_staff}'})
     print(f"Get user response: {response.json}")
@@ -174,7 +174,7 @@ def test_get_user(client, access_token_staff):
     assert 'id' in response.json
     assert 'username' in response.json
    
-
+# # testing the get user endpoint by id returning email and username
 def test_get_user(client, access_token_staff):
     response = client.get('/users/1', headers={'Authorization': f'Bearer {access_token_staff}'})
     print(f"Get user response: {response.json}")
@@ -183,6 +183,7 @@ def test_get_user(client, access_token_staff):
     assert 'username' in response.json
     assert 'email' in response.json
 
+# testing the manage menu endpoint
 def test_manage_menus_get(client):
     response = client.get('/menus')
     print(f"Get menus response: {response.json}")
@@ -265,6 +266,7 @@ def test_get_discounted_menus(client, init_database):
     assert response.status_code == 200
     assert isinstance(response.json, list)
 
+#testing the get
 def test_get_drink_menus(client, init_database):
     response = client.get('/menus/drinks')
     print(f"Get drink menus response: {response.json}")
